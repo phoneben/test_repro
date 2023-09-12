@@ -5,6 +5,14 @@ tail -7 synthetic_historical_fc_accuracy.tsv >scratch.txt
 cut -d $'\t' -f6 scratch.txt
 week_fc=$(cut -d $'\t' -f6 scratch.txt)
 echo ${week_fc[@]}
+for i in "${arrayName[@]}"
+do
+   : 
+   $ diff=-42
+$ if ((diff < 0)); then let diff*=-1; fi
+$ echo $diff 
+42
+done
 count=3
 lines_in_file="$(wc -l < synthetic_historical_fc_accuracy.tsv)"
 echo $lines_in_file

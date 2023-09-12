@@ -1,8 +1,12 @@
 #!/bin/bash
 
 # Initialize the count variable
+tail -7 synthetic_historical_fc_accuracy.tsv >scratch.txt
+cut -d $'\t' -f6 scratch.txt
+week_fc=$(cut -d $'\t' -f6 scratch.txt)
+echo ${week_fc[@]}
 count=3
-lines_in_file="$(wc -l < rx_poc.log)"
+lines_in_file="$(wc -l < synthetic_historical_fc_accuracy.tsv)"
 echo $lines_in_file
 loop_no=$(("$lines_in_file"-2))
 for ((i = 1; i <= $loop_no; i++));
